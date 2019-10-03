@@ -163,11 +163,11 @@ dc.loadMenuCategories = function () {
 document.getElementById("about_btn").addEventListener("click", function (event) {
 	
   showLoading("#main-content");
-   
+   console.log("hi im here!")
    $ajaxUtils.sendGetRequest(
     aboutHtmlURL,
     function (aboutHtml) {
-  
+	console.log(aboutHtml)
 	  var rating = Math.floor(Math.random() * 5 + 1);
 	  for (var i=1; i<6; i++) {
 		  if (i <= rating) {
