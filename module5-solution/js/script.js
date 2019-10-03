@@ -160,7 +160,7 @@ dc.loadMenuCategories = function () {
 };
 
 // Load the about categories view
-dc.loadAbout = function () {
+function loadAbout() {
   showLoading("#main-content");
   
   var rating = Math.floor(Math.random() * 5 + 1);
@@ -175,7 +175,7 @@ dc.loadAbout = function () {
   insertHtml("#main-content", aboutHtml);
   
   
-};
+}
 
 // Load the menu items view
 // 'categoryShort' is a short_name for a category
