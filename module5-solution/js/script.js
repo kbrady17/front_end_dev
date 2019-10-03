@@ -23,6 +23,8 @@ var menuItemsUrl =
 var menuItemsTitleHtml = "snippets/menu-items-title.html";
 var menuItemHtml = "snippets/menu-item.html";
 
+var aboutHtml = "snippets/about.html";
+
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
   var targetElem = document.querySelector(selector);
@@ -59,6 +61,8 @@ var switchMenuToActive = function () {
     document.querySelector("#navMenuButton").className = classes;
   }
 };
+
+
 
 // On page load (before images or CSS)
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -142,7 +146,6 @@ function buildAndShowHomeHTML (categories) {
 function chooseRandomCategory (categories) {
   // Choose a random index into the array (from 0 inclusively until array length (exclusively))
   var randomArrayIndex = Math.floor(Math.random() * categories.length);
-
   // return category object with that randomArrayIndex
   return categories[randomArrayIndex];
 }
@@ -156,6 +159,23 @@ dc.loadMenuCategories = function () {
     buildAndShowCategoriesHTML);
 };
 
+// Load the menu categories view
+dc.loadMenuCategories = function () {
+  showLoading("#main-content");
+  
+  var rating = Math.floor(Math.random() * 5 + 1);
+  for (var i=1; i<6; i++) {
+	  if (i <= rating) {
+		insertProperty(aboutHtml, "class_" + i, "fa fa-star");
+	  } else {
+		insertProperty(aboutHtml, "class_" + i, "fa fa-star-o");
+	  }
+  }
+  
+  insertHtml("#main-content", aboutHtml);
+  
+  
+};
 
 // Load the menu items view
 // 'categoryShort' is a short_name for a category
