@@ -23,7 +23,7 @@ var menuItemsUrl =
 var menuItemsTitleHtml = "snippets/menu-items-title.html";
 var menuItemHtml = "snippets/menu-item.html";
 
-var aboutHtml = "snippets/about.html";
+var aboutHtmlURL = "snippets/about.html";
 
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
@@ -160,7 +160,8 @@ dc.loadMenuCategories = function () {
 };
 
 // Load the about categories view
-function loadAbout() {
+document.getElementById("about_btn").addEventListener("click", function (event) {
+	
   showLoading("#main-content");
    
    $ajaxUtils.sendGetRequest(
@@ -179,7 +180,6 @@ function loadAbout() {
 	  insertHtml("#main-content", aboutHtml);
 	  
 	});
-  
   
 }
 
