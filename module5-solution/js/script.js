@@ -159,8 +159,8 @@ dc.loadMenuCategories = function () {
     buildAndShowCategoriesHTML);
 };
 
-// Load the menu categories view
-dc.loadMenuCategories = function () {
+// Load the about categories view
+dc.loadAbout = function () {
   showLoading("#main-content");
   
   var rating = Math.floor(Math.random() * 5 + 1);
