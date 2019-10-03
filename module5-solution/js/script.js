@@ -162,17 +162,23 @@ dc.loadMenuCategories = function () {
 // Load the about categories view
 function loadAbout() {
   showLoading("#main-content");
+   
+   $ajaxUtils.sendGetRequest(
+    aboutHtmlURL,
+    function (aboutHtml) {
   
-  var rating = Math.floor(Math.random() * 5 + 1);
-  for (var i=1; i<6; i++) {
-	  if (i <= rating) {
-		insertProperty(aboutHtml, "class_" + i, "fa fa-star");
-	  } else {
-		insertProperty(aboutHtml, "class_" + i, "fa fa-star-o");
+	  var rating = Math.floor(Math.random() * 5 + 1);
+	  for (var i=1; i<6; i++) {
+		  if (i <= rating) {
+			insertProperty(aboutHtml, "class_" + i, "fa fa-star");
+		  } else {
+			insertProperty(aboutHtml, "class_" + i, "fa fa-star-o");
+		  }
 	  }
-  }
-  
-  insertHtml("#main-content", aboutHtml);
+	  
+	  insertHtml("#main-content", aboutHtml);
+	  
+	});
   
   
 }
