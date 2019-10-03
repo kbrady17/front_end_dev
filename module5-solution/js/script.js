@@ -169,11 +169,12 @@ document.getElementById("about_btn").addEventListener("click", function (event) 
     function (aboutHtml) {
 	console.log(aboutHtml)
 	  var rating = Math.floor(Math.random() * 5 + 1);
+	  console.log(rating)
 	  for (var i=1; i<6; i++) {
 		  if (i <= rating) {
-			insertProperty(aboutHtml, "class_" + i, "fa fa-star");
+			aboutHtml = insertProperty(aboutHtml, "class_" + i, "fa fa-star");
 		  } else {
-			insertProperty(aboutHtml, "class_" + i, "fa fa-star-o");
+			aboutHtml = insertProperty(aboutHtml, "class_" + i, "fa fa-star-o");
 		  }
 	  }
 	  console.log(aboutHtml)
