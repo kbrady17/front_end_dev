@@ -179,7 +179,7 @@ document.getElementById("about_btn").addEventListener("click", function (event) 
 	  console.log(aboutHtml)
 	  insertHtml("#main-content", aboutHtml);
 	  
-	});
+	}, false);
   
 });
 
