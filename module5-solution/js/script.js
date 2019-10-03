@@ -176,7 +176,7 @@ document.getElementById("about_btn").addEventListener("click", function (event) 
 			insertProperty(aboutHtml, "class_" + i, "fa fa-star-o");
 		  }
 	  }
-	  
+	  console.log(aboutHtml)
 	  insertHtml("#main-content", aboutHtml);
 	  
 	});
