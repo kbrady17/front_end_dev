@@ -181,7 +181,7 @@ document.getElementById("about_btn").addEventListener("click", function (event) 
 	  
 	});
   
-}
+});
 
 // Load the menu items view
 // 'categoryShort' is a short_name for a category
