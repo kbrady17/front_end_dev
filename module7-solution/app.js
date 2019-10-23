@@ -40,7 +40,7 @@ function ShoppingListCheckOffService() {
 
     var service = this;
 
-    var to_buy_items = [{name: "cookies", quantity: "11", pricePerItem:2},{name: "cookies", quantity: "10", pricePerItem:2.50}];
+    var to_buy_items = [{name: "cookies", quantity: "11", pricePerItem:2},{name: "scones", quantity: "10", pricePerItem:2.50}];
     var bought_items = [];
 
     service.buy_item = function(idx) {
