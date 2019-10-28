@@ -13,7 +13,7 @@ var myapp = angular.module("NarrowItDownApp", []);
         var ddo = {
             templateUrl: 'menuItems.html'
           };
-        
+        console.log(ddo)
         return ddo;
     }
     
@@ -29,6 +29,7 @@ var myapp = angular.module("NarrowItDownApp", []);
             
             promise.then(function (response) {
                 narrowctr.found = response;
+                console.log(response)
               })
         }
 
