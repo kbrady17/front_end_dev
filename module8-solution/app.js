@@ -12,7 +12,7 @@ var myapp = angular.module("NarrowItDownApp", []);
     function FoundItems() {
         var ddo = {
             // template: '{{item.short_name}} | {{item.name}} <button ng-click="narrowctr.removeItem({index: $index});">Remove Item</button><ul><li>{{item.description}}</li></ul>',
-            template: "menuItems.html"
+            templateUrl: "menuItems.html"
           };
         
         return ddo;
