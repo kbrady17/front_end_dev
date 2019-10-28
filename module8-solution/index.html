@@ -9,20 +9,26 @@
     <script src="app.js"></script>
   </head>
 <body >
+  
    <div class="container" ng-controller='NarrowItDownController as narrowctr'>
     <h1>Narrow Down Your Chinese Menu Choice</h1>
-
+    <div style="display: block;">
     <div class="form-group">
       <input type="text" ng-model="narrowctr.search_item" placeholder="search term" class="form-control">
     </div>
     <div class="form-group narrow-button">
       <button ng-click="narrowctr.get_narrow_menu()" class="btn btn-primary">Narrow It Down For Me!</button>
     </div> 
+  </div>
+  <div style="display: block; float:left;">
+    <ol>
+      
+        <found-items ng-repeat="item in list.items"></found-items>
+      
+    </ol>
+  </div>
+    <!-- <found-items found-items="...." on-remove="...."></found-items> -->
 
-    
-     <found-items found-items="narrowctr.found" on-remove="narrowctr.removeMenuItem(index)">
-
-     </found-items>
   </div>
   
 </body>
