@@ -20,11 +20,11 @@
       <button ng-click="narrowctr.get_narrow_menu()" class="btn btn-primary">Narrow It Down For Me!</button>
     </div> 
   </div>
-  <div style="display: block; float:left;">
+  <div style="display: block; float:left">
     <ol>
-      
-        <found-items ng-repeat="item in list.items"></found-items>
-      
+      <li ng-repeat="item in narrowctr.found">
+        <found-items on-remove="narrowctr.removeItem(index)"></found-items>
+      </li>
     </ol>
   </div>
     <!-- <found-items found-items="...." on-remove="...."></found-items> -->

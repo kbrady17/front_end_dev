@@ -11,9 +11,10 @@ var myapp = angular.module("NarrowItDownApp", []);
     
     function FoundItems() {
         var ddo = {
-            templateUrl: 'menuItems.html'
+            // template: '{{item.short_name}} | {{item.name}} <button ng-click="narrowctr.removeItem({index: $index});">Remove Item</button><ul><li>{{item.description}}</li></ul>',
+            template: "menuItems.html"
           };
-        console.log(ddo)
+        
         return ddo;
     }
     
@@ -29,13 +30,12 @@ var myapp = angular.module("NarrowItDownApp", []);
             
             promise.then(function (response) {
                 narrowctr.found = response;
-                console.log(response)
               })
         }
 
 
-        narrowctr.removeMenuItem = function(idx) {
-            narrowctr.found = narrowctr.found.splice(idx,1);
+        narrowctr.removeItem = function(idx) {
+            narrowctr.found.splice(idx,1);
         }
         
 

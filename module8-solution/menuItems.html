@@ -1,4 +1,9 @@
   <li >
-    {{ item.short_name }} | {{ item.name }} | {{item.description}}
-    <button ng-click="list.onRemove({index: $index});">Remove Item</button>
+    {{ item.short_name }} | {{ item.name }}
+    <button ng-click="narrowctr.removeItem({index: $index});">Remove Item</button>
+    <ul>
+        <li>
+                {{item.description}}
+        </li>
+    </ul>
   </li>
