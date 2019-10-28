@@ -4,12 +4,13 @@
     
     
     angular.module('ShoppingListCheckOff', [])
+    .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
     .controller('ToBuyController', ToBuyController)
-    .controller('AlreadyBoughtController', AlreadyBoughtController)
-    .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
+    .controller('AlreadyBoughtController', AlreadyBoughtController);
 
 
     ToBuyController.$inject = ['ShoppingListCheckOffService'];
+
 function ToBuyController(ShoppingListCheckOffService) {
 
     var itemctr = this;
@@ -40,14 +41,12 @@ function ShoppingListCheckOffService() {
 
     var service = this;
 
-    var to_buy_items = [{name: "cookies", quantity: "11", pricePerItem:2},{name: "scones", quantity: "10", pricePerItem:2.50}];
+    var to_buy_items = [{name: "cookies", quantity: "11", pricePerItem:2},{name: "cookies", quantity: "10", pricePerItem:2.50}];
     var bought_items = [];
 
     service.buy_item = function(idx) {
 
-        
         var itemGuy = to_buy_items[idx];
-        console.log(to_buy_items);
         to_buy_items.splice(idx,1);
         bought_items.push(itemGuy);
     };
