@@ -14,9 +14,12 @@ angular.module('LunchCheck', [])
 
 
 		function countItems(lunchString) {
-			var numItems = lunchString.split(',').length;
-			console.log(lunchString.split(','))
-			if (numItems === 1 && lunchString === "") return "Please enter data first";
+			var items = lunchString.split(',');
+			var real_items = items.filter(el => el.trim() != "");
+			var numItems = real_items.length;
+			
+			console.log(numItems)
+			if (numItems == 0) return "Please enter data first";
 			if (numItems > 3) return "Too Much!";
 			
 			return "Enjoy!"
