@@ -19,13 +19,8 @@
         templateUrl: 'library/templates/home.template.html'
       })
 
-      .state('testingState', {
-        url: '/testing',
-        templateUrl: 'library/templates/testing.template.html'
-      })
-    
-      // Premade list page
-      .state('categoriesList', {
+      
+      .state('categoriesState', {
         url: '/category-list',
         templateUrl: 'library/templates/testing.template.html',
         controller: 'CategoriesController as categoriesList',
@@ -34,6 +29,11 @@
             return MenuDataService.getAllCategories();
           }]
         }
+      })
+      
+      .state('testingState', {
+        url: '/testing',
+        templateUrl: 'library/templates/testing.template.html'
       });
     
     //   .state('itemList', {
