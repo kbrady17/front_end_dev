@@ -25,7 +25,7 @@
         templateUrl: 'library/templates/menu-categories.template.html',
         controller: 'CategoriesController as categoriesList',
         resolve: {
-          items: ['MenuDataService', function (MenuDataService) {
+          categories: ['MenuDataService', function (MenuDataService) {
             return MenuDataService.getAllCategories();
           }]
         }
