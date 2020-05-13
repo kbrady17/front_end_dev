@@ -6,7 +6,7 @@
     
     
     MenuDataService.$inject = ['$http']
-    function MenuDataService($q, $timeout) {
+    function MenuDataService($http) {
 
         var service = this;
 
