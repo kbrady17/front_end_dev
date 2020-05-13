@@ -18,18 +18,24 @@
         url: '/',
         templateUrl: 'library/templates/home.template.html'
       })
-    
+
       // Premade list page
       .state('categoriesList', {
         url: '/category-list',
-        templateUrl: 'library/templates/menu-categories.template.html',
-        controller: 'CategoriesController as categoriesList',
-        resolve: {
-          categories: ['MenuDataService', function (MenuDataService) {
-            return MenuDataService.getAllCategories();
-          }]
-        }
+        templateUrl: 'library/templates/menu-categories.template.html'
       })
+    
+      // Premade list page
+    //   .state('categoriesList', {
+    //     url: '/category-list',
+    //     templateUrl: 'library/templates/menu-categories.template.html',
+    //     controller: 'CategoriesController as categoriesList',
+    //     resolve: {
+    //       categories: ['MenuDataService', function (MenuDataService) {
+    //         return MenuDataService.getAllCategories();
+    //       }]
+    //     }
+    //   })
     
     //   .state('itemList', {
     //     url: '/item-detail/{itemId}',
