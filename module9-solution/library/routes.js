@@ -20,18 +20,18 @@
       })
 
       
-      .state('testingState', {
-        url: '/testing',
-        templateUrl: 'library/templates/testing.template.html',
-        controller: 'CategoriesController as categoriesList',
-        resolve: {
-          categories: ['MenuDataService', function (MenuDataService) {
-            return MenuDataService.getAllCategories();
-          }]
-        }
+      .state('categoriesState', {
+        url: '/categories',
+        templateUrl: 'library/templates/menu-categories.template.html' //,
+        // controller: 'CategoriesController as categoriesList',
+        // resolve: {
+        //   categories: ['MenuDataService', function (MenuDataService) {
+        //     return MenuDataService.getAllCategories();
+        //   }]
+        // }
       })
       
-      .state('categoriesState', {
+      .state('testingState', {
         url: '/testing',
         templateUrl: 'library/templates/testing.template.html'
       });
