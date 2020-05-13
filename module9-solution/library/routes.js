@@ -22,8 +22,8 @@
       
       .state('categoriesState', {
         url: '/categories',
-        templateUrl: 'library/templates/menu-categories.template.html' //,
-        // controller: 'CategoriesController as categoriesList',
+        templateUrl: 'library/templates/menu-categories.template.html' ,
+        // controller: 'CategoriesController as categoriesList'//,
         // resolve: {
         //   categories: ['MenuDataService', function (MenuDataService) {
         //     return MenuDataService.getAllCategories();
