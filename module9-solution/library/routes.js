@@ -19,23 +19,22 @@
         templateUrl: 'library/templates/home.template.html'
       })
 
-      // Premade list page
-      .state('categoriesList', {
-        url: '/category-list',
-        templateUrl: 'library/templates/menu-categories.template.html'
+      .state('testingState', {
+        url: '/testing',
+        templateUrl: 'library/templates/testing.template.html'
       })
     
       // Premade list page
-    //   .state('categoriesList', {
-    //     url: '/category-list',
-    //     templateUrl: 'library/templates/menu-categories.template.html',
-    //     controller: 'CategoriesController as categoriesList',
-    //     resolve: {
-    //       categories: ['MenuDataService', function (MenuDataService) {
-    //         return MenuDataService.getAllCategories();
-    //       }]
-    //     }
-    //   })
+      .state('categoriesList', {
+        url: '/category-list',
+        templateUrl: 'library/templates/menu-categories.template.html',
+        controller: 'CategoriesController as categoriesList',
+        resolve: {
+          categories: ['MenuDataService', function (MenuDataService) {
+            return MenuDataService.getAllCategories();
+          }]
+        }
+      });
     
     //   .state('itemList', {
     //     url: '/item-detail/{itemId}',
