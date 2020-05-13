@@ -20,8 +20,8 @@
       })
 
       
-      .state('categoriesState', {
-        url: '/category-list',
+      .state('testingState', {
+        url: '/testing',
         templateUrl: 'library/templates/testing.template.html',
         controller: 'CategoriesController as categoriesList',
         resolve: {
@@ -31,7 +31,7 @@
         }
       })
       
-      .state('testingState', {
+      .state('categoriesState', {
         url: '/testing',
         templateUrl: 'library/templates/testing.template.html'
       });
