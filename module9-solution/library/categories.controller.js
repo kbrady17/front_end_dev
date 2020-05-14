@@ -13,30 +13,22 @@
         catCtr.$onInit = function (){
           MenuDataService.getAllCategories()
           .then(function (result) {
-            catCtr.categories = result;
+            catCtr.categories = result.data;
           });
         };
 
-        // var promise = MenuDataService.getAllCategories();
 
-        // promise.then(function (response) {
-        //     menu.categories = response.data;
-        // })
-        // .catch(function (error) {
-        //     console.log("Something went terribly wrong.");
-        // });
-
-
-        // menu.logMenuItems = function (shortName) {
-        //     var promise = MenuDataService.getItemsForCategory(shortName);
+        catCtr.catItems = [];
+        catCtr.getCategoryItems = function (shortName) {
+            var promise = MenuDataService.getItemsForCategory(shortName);
         
-        //     promise.then(function (response) {
-        //       console.log(response.data);
-        //     })
-        //     .catch(function (error) {
-        //       console.log(error);
-        //     })
-        //   };
+            promise.then(function (response) {
+              catCtr.catItems = response.data;
+            })
+            .catch(function (error) {
+              console.log(error);
+            })
+          };
 
 
     }
