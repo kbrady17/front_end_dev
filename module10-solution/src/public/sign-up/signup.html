@@ -48,6 +48,11 @@
         </span>
         <br>
 
+        <input type="text" name="faveitem" placeholder="Favorite Menu Item"
+        ng-model="signupCtrl.faveitem">
+        
+        <br>
+
       <button
         ng-disabled="regForm.$invalid"
         ng-click="signupCtrl.submit()">Submit</button>

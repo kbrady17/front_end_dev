@@ -13,17 +13,19 @@
       service.lastname = "";
       service.phone = "";
       service.email = "";
+      service.faveitem = "";
 
     
-      service.set_user_data = function(firstname, lastname, phone, email) {
+      service.set_user_data = function(firstname, lastname, phone, email, faveitem) {
         service.firstname = firstname;
         service.lastname = lastname;
         service.phone = phone;
         service.email = email;
+        service.faveitem = faveitem;
       }
 
       service.get_user_data = function() {
-          return [service.firstname, service.lastname, service.phone, service.email];
+          return [service.firstname, service.lastname, service.phone, service.email, service.faveitem];
       }
 
     
