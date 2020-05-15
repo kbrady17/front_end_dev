@@ -4,8 +4,8 @@
     angular.module('public')
     .controller('SignUpController', SignUpController);
     
-    SignUpController.$inject = ["PublicService", 'ApiPath'];
-    function SignUpController(PublicService, ApiPath) {
+    SignUpController.$inject = ["PublicService", 'ApiPath', '$http'];
+    function SignUpController(PublicService, ApiPath, $http) {
       var sctrl = this;
       sctrl.firstname = "";
       sctrl.lastname = "";
