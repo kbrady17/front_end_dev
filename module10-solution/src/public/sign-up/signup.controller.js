@@ -13,21 +13,39 @@
       sctrl.email = "";
       sctrl.faveitem = "";
 
+      sctrl.faveitembad = false;
+
       sctrl.submit = function () {
           
 
-        var fave_item = sctrl.get_fave_item(sctrl.faveitem);
-        console.log(fave_item)
+        var promise = sctrl.get_fave_item(sctrl.faveitem);
 
-        PublicService.set_user_data(sctrl.firstname, sctrl.lastname, sctrl.phone, sctrl.email, fave_item);
+        promise.then(function (response) {
+            sctrl.faveitembad = false;
+          })
+          .catch(function (error) {
+            sctrl.faveitembad = true;
+            console.log(error);
+            return
+        })
+     
+
+        PublicService.set_user_data(sctrl.firstname, sctrl.lastname, sctrl.phone, sctrl.email, sctrl.faveitem);
       };
 
     
 
     sctrl.get_fave_item = function(fave_item) {
-        return $http.get(ApiPath + '/menu_items/' + fave_item + '.json', config).then(function (response) {
-            return response.data;
-        });
+        
+        var url2go = ApiPath + '/menu_items/' + fave_item + '.json';
+
+        var response = $http({
+            method: "GET",
+            url: url2go
+          });
+      
+          return response;
+
     }
 }
     
