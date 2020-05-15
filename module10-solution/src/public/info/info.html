@@ -4,3 +4,8 @@
     Email: {{ infoCtrl.email}} <br>
     Phone: {{ infoCtrl.phone }}
   </div>
+
+  <div ng-if="infoCtrl.firstname.length == 0">
+    <h5>NOT SIGNED UP YET :( </h5>
+    <button ui-sref="public.signup" >Sign Up Here!</button>
+  </div>
