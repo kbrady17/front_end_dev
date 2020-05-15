@@ -3,6 +3,10 @@
     Last Name: {{ infoCtrl.lastname}} <br>
     Email: {{ infoCtrl.email}} <br>
     Phone: {{ infoCtrl.phone }}
+    <div class="menu-item-photo">
+        <div>{{infoCtrl.faveitem}}</div>
+        <img class="img-responsive" width="250" height="150" ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.faveitem}}.jpg" alt="{{infoCtrl.faveitem}}">
+      </div>
   </div>
 
   <div ng-if="infoCtrl.firstname.length == 0">
