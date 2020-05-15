@@ -9,11 +9,6 @@ MenuService.$inject = ['$http', 'ApiPath'];
 function MenuService($http, ApiPath) {
   var service = this;
 
-  service.firstname = "";
-  service.lastname = "";
-  service.phone = "";
-  service.email = "";
-
   service.getCategories = function () {
     console.log(ApiPath + '/categories.json')
     return $http.get(ApiPath + '/categories.json').then(function (response) {
